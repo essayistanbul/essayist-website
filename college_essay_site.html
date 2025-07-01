@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essayists Istanbul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .branding {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    header img.logo {
+      height: 60px;
+    }
+    .site-title {
+      font-size: 1.8rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .site-title span {
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+    select.language-switcher {
+      padding: 0.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    .hero img.universities {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    .caption {
+      font-style: italic;
+      color: #777;
+      margin-top: 0.75rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 2rem 0 1rem;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .services {
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .service-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 300px;
+      text-align: center;
+    }
+    .service-card h3 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .service-card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .interest-form {
+      background: #fff;
+      padding: 3rem 2rem;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .interest-form h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .interest-form label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    .interest-form input,
+    .interest-form textarea,
+    .interest-form select {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .interest-form input[type="checkbox"],
+    .interest-form input[type="radio"] {
+      width: auto;
+    }
+    .interest-form button {
+      margin-top: 2rem;
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="branding">
+      <img src="images/logo.png" alt="Essayists Istanbul Logo" class="logo" />
+      <div class="site-title">Essay<span>ist</span></div>
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <select class="language-switcher" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+      </select>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/universities.jpg" alt="Top Universities" class="universities" />
+    <div class="caption">şimdiye kadar çalıştığımız öğrencilerin kabul aldığı okullar</div>
+    <h1 id="hero-title">Your Gateway to Top Universities</h1>
+    <p id="hero-desc">At Essayists Istanbul, we guide students in crafting powerful college essays, discovering the right-fit schools, and unlocking doors to world-class education.</p>
+  </section>
+
+  <section id="services" class="services">
+    <div class="service-card">
+      <h3>Essay Editing</h3>
+      <p>Get detailed feedback on structure, tone, and storytelling to make your personal statement shine.</p>
+    </div>
+    <div class="service-card">
+      <h3>Brainstorming Help</h3>
+      <p>We'll help you uncover compelling essay topics that reflect your unique voice and experiences.</p>
+    </div>
+    <div class="service-card">
+      <h3>College List Curation</h3>
+      <p>Based on your profile, goals, and preferences, we recommend the best-fit universities for you.</p>
+    </div>
+  </section>
+
+  <section class="interest-form">
+    <h2>Application & Interest Form</h2>
+    <form action="https://formspree.io/f/mkgbylvw" method="POST">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone">
+
+  <label>Which countries are you interested in?</label><br>
+  <input type="checkbox" name="countries[]" value="UK"> UK<br>
+  <input type="checkbox" name="countries[]" value="USA"> USA<br>
+  <input type="checkbox" name="countries[]" value="Canada"> Canada<br>
+  <input type="checkbox" name="countries[]" value="Europe"> European (English)<br>
+
+  <label for="study_area">What areas of study are you interested in?</label>
+  <textarea name="study_area" id="study_area" rows="4"></textarea>
+
+  <label>Which services are you interested in?</label><br>
+  <input type="checkbox" name="services[]" value="College Fit"> Curating a list of schools<br>
+  <input type="checkbox" name="services[]" value="Essay Editing"> Editing an existing essay<br>
+  <input type="checkbox" name="services[]" value="Brainstorming"> Brainstorming ideas<br>
+
+  <button type="submit">Submit</button>
+</form>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Essayists Istanbul. All rights reserved.</p>
+  </footer>
+</body>
+</html>
