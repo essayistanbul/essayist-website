@@ -188,6 +188,36 @@
     </div>
   </section>
 
+  <section class="interest-form">
+    <h2>Application & Interest Form</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label>Which countries are you interested in?</label><br>
+      <input type="checkbox" name="countries[]" value="UK"> UK<br>
+      <input type="checkbox" name="countries[]" value="USA"> USA<br>
+      <input type="checkbox" name="countries[]" value="Canada"> Canada<br>
+      <input type="checkbox" name="countries[]" value="Europe"> European institutions (English education)<br>
+
+      <label for="study_area">What areas of study are you interested in?</label>
+      <textarea name="study_area" id="study_area" rows="4"></textarea>
+
+      <label>Which services are you interested in?</label><br>
+      <input type="checkbox" name="services[]" value="College Fit"> Curating a list of schools (college fit)<br>
+      <input type="checkbox" name="services[]" value="Essay Editing"> Editing an existing essay<br>
+      <input type="checkbox" name="services[]" value="Brainstorming"> Brainstorming ideas<br>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
   <footer>
     <p>&copy; 2025 Essayists Istanbul. All rights reserved.</p>
   </footer>
