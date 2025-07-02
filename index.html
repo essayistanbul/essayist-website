@@ -233,5 +233,26 @@
   <footer>
     <p>&copy; 2025 Essayists Istanbul. All rights reserved.</p>
   </footer>
+
+  <script>
+  function changeLanguage(lang) {
+    const trElements = document.querySelectorAll('.lang-tr');
+    const enElements = document.querySelectorAll('.lang-en');
+
+    if (lang === 'tr') {
+      trElements.forEach(el => el.style.display = 'inline');
+      enElements.forEach(el => el.style.display = 'none');
+    } else {
+      trElements.forEach(el => el.style.display = 'none');
+      enElements.forEach(el => el.style.display = 'inline');
+    }
+  }
+
+  // Optional: Default to English on load
+  document.addEventListener('DOMContentLoaded', () => {
+    changeLanguage('en');
+  });
+</script>
+
 </body>
 </html>
