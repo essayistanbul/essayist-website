@@ -3,207 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Essayists Istanbul</title>
+  <title>Essayist Istanbul</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --primary: #ffffff;
+      --accent: #0d99ff;
+      --bg: #f8fafc;
+      --text: #1a1a1a;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
     header {
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 1rem 2rem;
+      background: var(--primary);
+      color: var(--text);
+      padding: 1.5rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
     }
-    .branding {
+    .logo-title {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
-    header img.logo {
-      height: 60px;
+    .logo-title img {
+      height: 48px;
     }
-    .site-title {
-      font-size: 1.8rem;
+    .logo-title h1 {
       font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      color: var(--text);
     }
-    .site-title span {
-      font-weight: bold;
-    }
-    nav {
-      display: flex;
-      align-items: center;
+    .logo-title h1 span {
+      font-weight: 700;
+      color: var(--accent);
     }
     nav a {
-      margin: 0 1rem;
+      margin-left: 1.5rem;
       text-decoration: none;
-      color: #333;
+      color: var(--text);
       font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
     }
     .hero {
+      display: grid;
+      place-items: center;
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 5rem 2rem 3rem;
+      background: #eef3f7;
+      color: var(--text);
     }
-    .hero img.universities {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero p {
+      max-width: 680px;
+      font-size: 1.1rem;
+    }
+    .hero img {
+      margin-top: 2rem;
+      max-width: 800px;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px var(--shadow);
     }
     .caption {
       font-style: italic;
-      color: #777;
-      margin-top: 0.75rem;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin: 2rem 0 1rem;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      color: #555;
+      color: #666;
+      margin-top: 0.5rem;
     }
     .services {
-      padding: 2rem;
-      display: flex;
-      flex-wrap: wrap;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      justify-content: center;
     }
     .service-card {
       background: white;
-      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      max-width: 300px;
-      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 4px 12px var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
     }
     .service-card h3 {
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
     }
-    .service-card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-    .interest-form {
-      background: #fff;
-      padding: 3rem 2rem;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .interest-form h2 {
+    .form-section {
+      background: #0d99ff10;
+      color: var(--text);
+      padding: 4rem 2rem;
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-family: 'Playfair Display', serif;
     }
-    .interest-form label {
+    .form-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    form label {
       display: block;
       margin-top: 1rem;
       margin-bottom: 0.25rem;
-      font-weight: 600;
     }
-    .interest-form input,
-    .interest-form textarea,
-    .interest-form select {
+    form input,
+    form textarea,
+    form select {
       width: 100%;
-      padding: 0.5rem;
+      padding: 0.6rem;
       border-radius: 6px;
       border: 1px solid #ccc;
+      margin-bottom: 1rem;
     }
-    .interest-form input[type="checkbox"],
-    .interest-form input[type="radio"] {
-      width: auto;
-    }
-    .interest-form button {
-      margin-top: 2rem;
-      display: block;
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      background-color: #333;
-      color: white;
+    form button {
+      padding: 0.8rem 2rem;
+      background: var(--accent);
       border: none;
       border-radius: 6px;
+      color: white;
+      font-weight: 600;
       cursor: pointer;
     }
+    form button:hover {
+      background: #0b85db;
+    }
     footer {
-      background: #1a1a1a;
-      color: white;
       text-align: center;
-      padding: 1rem;
+      background: #1e1e1e;
+      color: white;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="branding">
-      <img src="images/logo.png" alt="Essayists Istanbul Logosu" class="logo" />
-      <div class="site-title">Essay<span>ist</span></div>
+    <div class="logo-title">
+      <img src="images/logo.png" alt="Essayist Logo">
+      <h1>Essay<span>ist</span></h1>
     </div>
     <nav>
       <a href="#services">Hizmetler</a>
-      <a href="#contact">İletişim</a>
+      <a href="#form">Başvuru</a>
     </nav>
   </header>
 
   <section class="hero">
-    <img src="images/universities.jpg" alt="Üniversiteler" class="universities" />
-    <div class="caption">şimdiye kadar çalıştığımız öğrencilerin kabul aldığı okullar</div>
-    <h1>En İyi Yurtdışı Üniversitelerine Açılan Kapınız</h1>
-    <p>Essayist’te üniversite beklentilerini kabul mektuplarına dönüştürüyoruz. Öğrencilere özgün kabul yazıları hazırlama, stratejik üniversite listeleri hazırlama ve sistemi sizin lehinize anlayarak ve kullanarak giderek daha rekabetçi hale gelen başvuru ortamında başarıya ulaşmak konusunda danışmanlık veriyoruz.<br><br>Felsefemiz üç boyutlu: özgünlük bir avantaj, strateji başarının yarısı ve kişi için doğru okulu uyumu kalıcı akademik tatmin yaratır.</p>
+    <h2>En İyi Yurtdışı Üniversitelerine Açılan Kapınız</h2>
+    <p>Essayist’te üniversite beklentilerini kabul mektuplarına dönüştürüyoruz. Öğrencilere özgün kabul yazıları hazırlama, stratejik üniversite listeleri oluşturma ve giderek daha rekabetçi hale gelen başvuru ortamında başarılı olma konularında danışmanlık sunuyoruz.</p>
+    <img src="images/universities.jpg" alt="Universiteler">
+    <div class="caption">Şimdiye kadar çalıştığımız öğrencilerin kabul aldığı okullar</div>
   </section>
 
   <section id="services" class="services">
     <div class="service-card">
       <h3>Üniversite Listesi Oluşturma</h3>
-      <p>Akademik profilinize, ilgi alanlarınıza ve kariyer hedeflerinize göre uyarlanmış kapsamlı bir üniversite listesi oluşturmanıza yardımcı oluyoruz. Kabul şansınızı optimize etmek için “reach”, “target” ve “safety” okulları arasında stratejik bir dağılım oluşturuyoruz. Başvuru döngüsü ilerledikçe, bu liste yeni gelişmelere dayalı bir 'kısa liste' haline getirilecek ve hem başarılı olacağınız hem de gerçekçi kabul şanslarına sahip olacağınız kurumlara başvurmanız sağlanacaktır.</p>
+      <p>Akademik profilinize, ilgi alanlarınıza ve kariyer hedeflerinize göre uyarlanmış kapsamlı bir üniversite listesi oluşturmanıza yardımcı oluyoruz. Bu liste zamanla gelişerek en uygun kısa listeye dönüşür.</p>
     </div>
     <div class="service-card">
       <h3>Fikir Geliştirme Desteği</h3>
-      <p>Eşsiz deneyimlerinizi etkileyici başvuru hikayelerine dönüştürün. Akademik başarılarınız, ders dışı faaliyetleriniz ve kişisel deneyimlerinizden güçlü hikayeler çıkararak sizinle birlikte çalışıyoruz. Hangi ögelerin öne çıkarılacağını belirlemekte zorlanıyorsanız, sürecin her aşamasında size destek oluyoruz.</p>
+      <p>Deneyimlerinizi etkileyici başvuru metinlerine dönüştürmenize yardımcı oluyoruz. Kişisel öykülerinizden güçlü temalar çıkararak otantik ve etkileyici yazılar geliştiriyoruz.</p>
     </div>
     <div class="service-card">
       <h3>Yazı Düzenleme</h3>
-      <p>İlk taslağınız hazır, zorlu kısım geride kaldı! Bu aşamada, uzman ekibimiz yazınızı dilbilgisi, imla ve yapı açısından düzenler. Ayrıca, sınırlı kelime sayınızı en etkili şekilde kullanmanızı sağlamak için içeriksel geri bildirim de sunarız. Yazınızın özgün sesinizi korurken, güçlü yönlerinizi ve başvurduğunuz okulun değerlerini yansıtmasına yardımcı oluruz.</p>
+      <p>İlk taslağınızı geliştirmek için buradayız. Dil bilgisi, yapı ve içerik açısından profesyonel düzenleme ile yazınızı güçlendiriyoruz.</p>
     </div>
   </section>
 
-  <section class="interest-form">
-    <h2>Başvuru ve İlgi Formu</h2>
+  <section id="form" class="form-section">
+    <h2>İlgilendiğiniz Hizmetleri Belirtin</h2>
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <label for="name">Adınız</label>
       <input type="text" id="name" name="name" required>
 
-      <label for="email">E-posta</label>
+      <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
 
       <label for="phone">Telefon Numarası</label>
       <input type="tel" id="phone" name="phone">
 
-      <label>Hangi ülkelerle ilgileniyorsunuz?</label><br>
+      <label>Hangi ülkelerde eğitim almak istiyorsunuz?</label>
       <input type="checkbox" name="countries[]" value="UK"> Birleşik Krallık<br>
-      <input type="checkbox" name="countries[]" value="USA"> ABD<br>
+      <input type="checkbox" name="countries[]" value="USA"> Amerika<br>
       <input type="checkbox" name="countries[]" value="Canada"> Kanada<br>
-      <input type="checkbox" name="countries[]" value="Europe"> İngilizce eğitim veren Avrupa üniversiteleri<br>
+      <input type="checkbox" name="countries[]" value="Europe"> Avrupa (İngilizce Eğitim Veren Kurumlar)<br>
 
-      <label for="study_area">İlgi duyduğunuz alanlar nelerdir?</label>
+      <label for="study_area">İlgilendiğiniz Bölümler</label>
       <textarea name="study_area" id="study_area" rows="4"></textarea>
 
-      <label>Hangi hizmetlerle ilgileniyorsunuz?</label><br>
+      <label>Hangi hizmetlerle ilgileniyorsunuz?</label>
       <input type="checkbox" name="services[]" value="College Fit"> Üniversite listesi oluşturma<br>
       <input type="checkbox" name="services[]" value="Essay Editing"> Mevcut yazının düzenlenmesi<br>
-      <input type="checkbox" name="services[]" value="Brainstorming"> Yeni bir yazı için fikir geliştirme<br>
+      <input type="checkbox" name="services[]" value="Brainstorming"> Yeni yazı fikirleri geliştirme<br>
 
       <button type="submit">Gönder</button>
     </form>
